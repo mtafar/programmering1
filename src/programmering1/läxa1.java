@@ -2,8 +2,18 @@ package programmering1;
 import java.util.Scanner;
 public class läxa1 {
 public static void main(String[] args) {
-	scanner input = new Scanner (system.in);
-	
+	Scanner input = new Scanner (system.in);
+	System.out.println("vad heter du");
+	input.next(); 
+System.out.println();
+
+
+
+
+
+
+
+
 }
 	
 	
