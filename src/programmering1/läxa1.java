@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class läxa1 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner (System.in);
-		System.out.println("vad heter du");
+		System.out.println("Vad heter du?");
 		String namn	= input.nextLine(); 
 
 		System.out.println("Hur gammal är du?");
@@ -24,9 +24,9 @@ public class läxa1 {
 		System.out.println("Information:");
 		System.out.println("Namn:    " +namn);
 		System.out.println("Ålder: 	 " +age+" år");
-		System.out.println("adress:  " +adress);
+		System.out.println("Adress:  " +adress);
 		System.out.println("         "+postnummer+" "+stad);
-		System.out.println("telefon: " +tele );
+		System.out.println("Telefon: " +tele );
 
 
 
