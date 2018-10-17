@@ -8,15 +8,16 @@ public class uppgiftvecka41 {
 		// System.out.println("skriv in en radie");
 		// double Radie = input.nextDouble();
 		// System.out.println(volume(Radie) + "cm3");
-		// System.out.println("skriv ditt namn");
-		// String Reva = input.nextLine();
-		// System.out.println(rev(Reva));
-		System.out.println("skriv");
+		 //System.out.println("skriv ditt namn");
+		 //String Reva = input.nextLine();
+		 //System.out.println(rev(Reva));
+		//System.out.println("skriv");
 		String str = input.nextLine();
-		System.out.println("skriv in ett bokstav");
-		String cs = input.nextLine();
-		char c = cs.charAt(0);
-		count(str, c);
+		//System.out.println("skriv in ett bokstav");
+		//String cs = input.nextLine();
+		//char c = cs.charAt(0);
+		//count(str, c);
+		System.out.println(sjorovare(str));
 	}
 
 	public static double volume(double radie) {
@@ -46,5 +47,28 @@ public class uppgiftvecka41 {
 		System.out.println(count);
 		return count;
 	}
-
+public static String sjorovare(String str)  {
+	String sjorovare = "";
+	
+	String konsonanter = "bcdfghjklmnpqrstvwxz";
+	
+	boolean konsonant = false;		
+		for (int i = 0; i < str.length(); i++) {
+		konsonant = false;	
+			
+			for (int a = 0; a < konsonanter.length(); a++) {
+				if(str.toLowerCase().charAt(i) == konsonanter.charAt(a)) {
+					sjorovare = sjorovare + str.charAt(i) + "o" + str.toLowerCase().charAt(i);
+					konsonant = true;
+					
+				}
+				}
+				
+			}
+			
+			return sjorovare;
+			
+			
+			
+}
 }
