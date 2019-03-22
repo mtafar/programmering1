@@ -5,7 +5,7 @@ public class Hangmangame {
 	private static Hangmangame __ME;
 
 	private String secretWord;
-	private static String[] words = { "CHOKLAD", "SOMMAR", "VATTEN", "FLYGPLAN" };
+	private static String[] words = { "FERRARI", "DYKNING", "FISKAR", "FLYGPLAN", "GLOCK", "JUPITER" };
 	private ArrayList<Character> gissningar = new ArrayList<Character>();
 	private Scanner input = new Scanner(System.in);
 
