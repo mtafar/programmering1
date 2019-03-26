@@ -69,21 +69,26 @@ public class Hangmangame {
 	private void processGuess(char gissa) {
 		boolean correct = false;
 		String out = "";
+		int i = 0;
 		for(char letter : secretWord.toCharArray()){
 			if(letter == gissa){	
 				correct = true;
-				out += letter;		
+				out += letter;
+				i++;
 			}	
 			
 			else if(gissningar.contains(letter)){
 				out += letter;	
+				i++;
 			}
 			
 			else{
 				out += "-";	
 			}	
 		}
-		
+		if(i == secretWord.length()) {
+			System.out.println("grattis du har vunnit");
+		}
 		gissningar.add(gissa);
 
 		if(!correct){
