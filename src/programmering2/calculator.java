@@ -23,10 +23,6 @@ public class calculator extends Application implements EventHandler<ActionEvent>
 	TextField inputfield;
 
 	ArrayList<Button> numpad;
-	Button addition;
-	Button subtraction;
-	Button division;
-	Button multiplication;
 	Button calculate;
 	Button clear;
 
@@ -72,7 +68,7 @@ public class calculator extends Application implements EventHandler<ActionEvent>
 		// TODO Auto-generated method stub
 		if(arg0.getSource() == calculate)
 		{
-			
+			inputfield.textProperty().set(inputfield.textProperty().get());
 		}
 
 	}
@@ -84,15 +80,18 @@ public class calculator extends Application implements EventHandler<ActionEvent>
 		numpadlayout = new GridPane();
 			
 		inputfield = new TextField();
-		calculate = new Button();
+		calculate = new Button("=");
 		calculate.setOnAction(this);
 		
 		numpad = new ArrayList<Button>();
+		
 		siffror();
 		displaynumpadbuttons();
-
 		root.setTop(inputfield);
 		root.setCenter(numpadlayout);
+		HBox box = new HBox(calculate);
+		
+		root.setBottom(box);
 		
 		mainscene = new Scene(root);
 
