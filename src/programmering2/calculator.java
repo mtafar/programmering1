@@ -68,7 +68,16 @@ public class calculator extends Application implements EventHandler<ActionEvent>
 		// TODO Auto-generated method stub
 		if(arg0.getSource() == calculate)
 		{
-			inputfield.textProperty().set(inputfield.textProperty().get());
+			
+			String equation = inputfield.textProperty().get();
+			
+			
+			System.out.println(inputfield.textProperty().get());
+			
+			if(equation.contains("+")){
+				
+			};
+				inputfield.textProperty().get();
 		}
 
 	}
@@ -82,7 +91,7 @@ public class calculator extends Application implements EventHandler<ActionEvent>
 		inputfield = new TextField();
 		calculate = new Button("=");
 		calculate.setOnAction(this);
-		
+		inputfield.setEditable(false);
 		numpad = new ArrayList<Button>();
 		
 		siffror();
