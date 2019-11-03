@@ -26,42 +26,42 @@ public class calculator extends Application implements EventHandler<ActionEvent>
 	Button calculate;
 	Button clear;
 
-	public static void main(String[] args) {
+	 public static void main(String[] args) {
 		launch();
 
 	}
-
-	private void displaynumpadbuttons() {
-		int buttonindex = 0;
-		for (int rowindex = 0; rowindex < 4; rowindex++) {
-			for (int columnindex = 0; columnindex < 4; columnindex++) {
-				numpadlayout.add(numpad.get(buttonindex), columnindex, rowindex);
-				buttonindex++;
-				if (buttonindex == numpad.size()) {
-					break;
+	  
+		 public void displaynumpadbuttons() {
+				int buttonindex = 0;
+				for (int rowindex = 0; rowindex < 4; rowindex++) {
+					for (int columnindex = 0; columnindex < 4; columnindex++) {
+						numpadlayout.add(numpad.get(buttonindex), columnindex, rowindex);
+						buttonindex++;
+						if (buttonindex == numpad.size()) {
+							break;
+						}
+					}
+					
 				}
 			}
-			
-		}
-	}
 
-	public void siffror() {
-		char[] siffrorkeys = { '1','2','3','+','4','5','6','-','7','8','9','*','/','0','.' };
-		for (char key : siffrorkeys) {
-			String keytext = key + "";
-			Button tempbutton = new Button(keytext);
-			tempbutton.setId(keytext);
-			tempbutton.setOnAction(event -> {
-				inputfield.textProperty().set(inputfield.textProperty().get() + keytext);
-			});
+			 public void siffror() {
+				char[] siffrorkeys = { '1','2','3','+','4','5','6','-','7','8','9','*','/','0','.' };
+				for (char key : siffrorkeys) {
+					String keytext = key + "";
+					Button tempbutton = new Button(keytext);
+					tempbutton.setId(keytext);
+					tempbutton.setOnAction(event -> {
+						inputfield.textProperty().set(inputfield.textProperty().get() + keytext);
+					});
 
-			numpad.add(tempbutton);
+					numpad.add(tempbutton);
 
-		}
-	}
-	public void raknesatt() {
-		
-	}
+				}
+			}
+	 
+	
+	
 
 	@Override
 	public void handle(ActionEvent arg0) {
@@ -70,14 +70,45 @@ public class calculator extends Application implements EventHandler<ActionEvent>
 		{
 			
 			String equation = inputfield.textProperty().get();
+			equation.toCharArray();
+			int index = 0;
+			for (char c : equation.toCharArray()) {
+			if (c == '+') {
+					String tal1 = equation.substring(0,index);
+					String tal2 = equation.substring(index+1,equation.length());
+					Double tal = Double.parseDouble(tal1);
+					Double talen = Double.parseDouble(tal2);
+					Double result = tal+talen;
+					inputfield.textProperty().set(inputfield.textProperty().get() + "=" +result);
+				}
+			if (c == '*') {
+				String tal1 = equation.substring(0,index);
+				String tal2 = equation.substring(index+1,equation.length());
+				Double tal = Double.parseDouble(tal1);
+				Double talen = Double.parseDouble(tal2);
+				Double result = tal*talen;
+				inputfield.textProperty().set(inputfield.textProperty().get() + "=" +result);
+			}
+			if (c == '-') {
+				String tal1 = equation.substring(0,index);
+				String tal2 = equation.substring(index+1,equation.length());
+				Double tal = Double.parseDouble(tal1);
+				Double talen = Double.parseDouble(tal2);
+				Double result = tal-talen;
+				inputfield.textProperty().set(inputfield.textProperty().get() + "=" +result);
+			}
+			if (c == '/') {
+				String tal1 = equation.substring(0,index);
+				String tal2 = equation.substring(index+1,equation.length());
+				Double tal = Double.parseDouble(tal1);
+				Double talen = Double.parseDouble(tal2);
+				Double result = tal/talen;
+				inputfield.textProperty().set(inputfield.textProperty().get() + "=" +result);
+			}
+				index++;
+			}
 			
 			
-			System.out.println(inputfield.textProperty().get());
-			
-			if(equation.contains("+")){
-				
-			};
-				inputfield.textProperty().get();
 		}
 
 	}
@@ -93,9 +124,8 @@ public class calculator extends Application implements EventHandler<ActionEvent>
 		calculate.setOnAction(this);
 		inputfield.setEditable(false);
 		numpad = new ArrayList<Button>();
-		
-		siffror();
 		displaynumpadbuttons();
+		siffror();
 		root.setTop(inputfield);
 		root.setCenter(numpadlayout);
 		HBox box = new HBox(calculate);
