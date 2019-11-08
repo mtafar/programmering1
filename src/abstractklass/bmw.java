@@ -5,21 +5,21 @@ public class bmw extends Car {
 		super.name = "bmw";
 	}
 
-		@Override
-		void fuel() {
-			// TODO Auto-generated method stub
-			System.out.println("Bensin");
-		}
+	@Override
+	void fuel() {
+		// TODO Auto-generated method stub
+		System.out.println("Bensin");
+	}
 
-		@Override
-		void doors() {
-			// TODO Auto-generated method stub
-			System.out.println("4");
-		}
+	@Override
+	void doors() {
+		// TODO Auto-generated method stub
+		System.out.println("4");
+	}
 
-		@Override
-		void topspeed() {
-			// TODO Auto-generated method stub
-			System.out.println("320 km/h");
-		}
+	@Override
+	void topspeed() {
+		// TODO Auto-generated method stub
+		System.out.println("320 km/h");
+	}
 }
